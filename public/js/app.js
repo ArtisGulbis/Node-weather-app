@@ -13,7 +13,7 @@ if (weatherForm) {
 
         if (messageOne) messageOne.textContent = 'Loading...'
         if (messageTwo) messageTwo.textContent = ''
-        fetch(`http://192.168.178.27:3000/weather?address=${location}`).then((response) => {
+        fetch(`/weather?address=${location}`).then((response) => {
             response.json().then((data) => {
                 if (data.error) {
                     messageOne.textContent = data.error
