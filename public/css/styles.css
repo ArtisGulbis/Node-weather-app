@@ -1,6 +1,6 @@
 body {
   color: #333333;
-  font-family: arial;
+  font-family: 'Calibri';
   max-width: 650px;
   margin: 0 auto;
   padding: 0 16px;
@@ -24,7 +24,7 @@ footer {
 select{
   border: 1px solid #cccccc;
   padding: 8px;
-  font: arial;
+  font: 'Calibri';
 }
 
 header {
@@ -63,4 +63,8 @@ button {
 button:hover{
   background: #e7e2e2;
   color: black;
+}
+
+#temp #sum #rain #local{
+  padding-top: 6px;
 }

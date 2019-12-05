@@ -18,8 +18,8 @@
 
         <p>Use this site to get weather</p>
 
-        <form action="">
-            <input type="text" placeholder="Location">
+        <form action="" id="form">
+            <input type="text" placeholder="Location" id="search">
             <select name="languages" id="languages">
                 <option value="en">English</option>
                 <option value="lv">Latvian</option>
@@ -28,10 +28,21 @@
                 <option value="ru">Russian</option>
                 <option value="es">Spanish</option>
             </select>
-            <button type="submit">Search</button>
+            <button type="submit" id="button">Search</button>
         </form>
-        <p id="message-1"></p>
-        <p id="message-2"></p>
+        <p id="loading"></p>
+        <div id="temp">
+
+        </div>
+        <div id="sum">
+
+        </div>
+        <div id="rain">
+
+        </div>
+        <div id="local">
+
+        </div>
 
     </div>
     {{>footer}}
