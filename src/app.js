@@ -6,7 +6,7 @@ const hbs = require('hbs');
 
 const app = express();
 const port = process.env.PORT || 3000
-
+//Hello
 // DEFINE PATHS FOR EXPRESS CONFIG
 const publicDirectoryPAth = path.join(__dirname, '../public');
 const viewsPath = path.join(__dirname, '../templates/views');
