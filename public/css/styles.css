@@ -21,6 +21,12 @@ footer {
   padding: 16px 0;
 }
 
+select{
+  border: 1px solid #cccccc;
+  padding: 8px;
+  font: arial;
+}
+
 header {
   margin-top: 16px;
   margin-bottom: 48px;
@@ -52,4 +58,9 @@ button {
   background: #888888;
   color: white;
   padding: 8px;
+}
+
+button:hover{
+  background: #e7e2e2;
+  color: black;
 }

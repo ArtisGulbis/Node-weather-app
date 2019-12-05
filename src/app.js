@@ -6,7 +6,7 @@ const hbs = require('hbs');
 
 const app = express();
 const port = process.env.PORT || 3000
-//Hello
+
 // DEFINE PATHS FOR EXPRESS CONFIG
 const publicDirectoryPAth = path.join(__dirname, '../public');
 const viewsPath = path.join(__dirname, '../templates/views');
@@ -49,11 +49,17 @@ app.get('/weather', (req, res) => {
             error: 'You must provide an address!'
         })
     }
+    if (!req.query.lang) {
+        return res.send({
+            error: 'You must provide a language'
+        })
+    }
+
     geoCode(req.query.address, (error, { latitude, longitude, location } = {}) => {
 
         if (error) return res.send({ error })
 
-        forecast(latitude, longitude, (error, forecastData) => {
+        forecast(latitude, longitude, req.query.lang, (error, forecastData) => {
             if (error) {
                 return res.send({
                     error
@@ -61,6 +67,7 @@ app.get('/weather', (req, res) => {
             }
             res.send({
                 forecast: forecastData,
+                temperature: 0,
                 location,
                 address: req.query.address,
             })
