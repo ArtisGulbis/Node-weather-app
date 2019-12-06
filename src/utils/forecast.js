@@ -10,14 +10,18 @@ const forecast = (lat, lon, lang, callback) => {
         } else if (body.error) {
             callback('Unable to find location!', undefined);
         } else {
-            const { temperature, precipProbability } = body.currently;
-            const { summary } = body.daily.data[0];
+            const { summary, moonPhase, temperatureLow, temperatureHigh, } = body.daily.data[1];
+            const { temperature, time } = body.currently
+            const timezone = body.timezone
             callback(undefined, {
+                time,
+                timezone,
                 summary,
-                temperature,
-                precipProbability,
+                moonPhase,
+                temperatureLow,
+                temperatureHigh,
+                temperature
             });
-            //`${summary} It is currently ${temperature} degrees out.There is a ${precipProbability} % chance of rain`
         }
     });
 }

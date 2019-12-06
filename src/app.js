@@ -59,17 +59,21 @@ app.get('/weather', (req, res) => {
 
         if (error) return res.send({ error })
 
-        forecast(latitude, longitude, req.query.lang, (error, { temperature, summary, precipProbability }) => {
+        forecast(latitude, longitude, req.query.lang, (error, { time, summary, moonPhase, temperatureLow, temperatureHigh, temperature, timezone }) => {
             if (error) {
                 return res.send({
                     error
                 })
             }
             res.send({
+                time,
                 summary,
-                precipProbability,
+                moonPhase,
+                temperatureLow,
+                temperatureHigh,
                 temperature,
                 location,
+                timezone,
                 address: req.query.address,
             })
         })
