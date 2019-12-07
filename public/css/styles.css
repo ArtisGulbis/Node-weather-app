@@ -1,6 +1,6 @@
 body {
   color: #333333;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family: Courier New, monospace;
   max-width: 650px;
   margin: 0 auto;
   padding: 0 16px;
@@ -21,10 +21,10 @@ footer {
   padding: 16px 0;
 }
 
-select{
+select {
   border: 1px solid #cccccc;
   padding: 8px;
-  font: 'Calibri';
+  font: Courier New, monospace;
 }
 
 header {
@@ -50,6 +50,7 @@ header a {
 input {
   border: 1px solid #cccccc;
   padding: 8px;
+  font-family: Courier New, monospace;
 }
 
 button {
@@ -58,13 +59,22 @@ button {
   background: #888888;
   color: white;
   padding: 8px;
+  font-family: Courier New, monospace;
 }
 
-button:hover{
+button:hover {
   background: #e7e2e2;
   color: black;
 }
 
-#temp #sum #rain #local{
-  padding-top: 6px;
+#time,
+#summary,
+#moonPhase,
+#temperature,
+#temperatureMax,
+#temperatureMin,
+#title {
+  max-width: fit-content;
+  padding: 4px;
+  font-family: Courier New, monospace;
 }
