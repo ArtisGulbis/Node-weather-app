@@ -10,7 +10,7 @@ const forecast = (lat, lon, lang, callback) => {
         } else if (body.error) {
             callback('Unable to find location!', undefined);
         } else {
-            const { summary, moonPhase, temperatureLow, temperatureHigh, } = body.daily.data[1];
+            const { summary, moonPhase, } = body.daily.data[1];
             const { temperature, time } = body.currently
             const timezone = body.timezone
             callback(undefined, {
@@ -18,8 +18,6 @@ const forecast = (lat, lon, lang, callback) => {
                 timezone,
                 summary,
                 moonPhase,
-                temperatureLow,
-                temperatureHigh,
                 temperature
             });
         }

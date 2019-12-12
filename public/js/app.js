@@ -7,8 +7,6 @@ const HTML = {
     time: document.querySelector('#time'),
     summary: document.querySelector('#summary'),
     moonPhase: document.querySelector('#moonPhase'),
-    tempMin: document.querySelector('#temperatureMin'),
-    tempMax: document.querySelector('#temperatureMax'),
     currentTemp: document.querySelector('#temperature'),
 }
 
@@ -19,10 +17,6 @@ const clearScreen = () => {
     HTML.summary.style.background = '#ffffff';
     HTML.moonPhase.textContent = '';
     HTML.moonPhase.style.background = '#ffffff';
-    HTML.tempMin.textContent = '';
-    HTML.tempMin.style.background = '#ffffff';
-    HTML.tempMax.textContent = '';
-    HTML.tempMax.style.background = '#ffffff';
     HTML.currentTemp.textContent = '';
     HTML.currentTemp.style.background = '#ffffff';
 }
@@ -46,10 +40,8 @@ function Unix_timestamp(t) {
 function replaceContent(data) {
     HTML.time.textContent = `Time: ${Unix_timestamp(data.time)} ${data.timezone}`;
     HTML.summary.textContent = `Summary: ${data.summary}`;
-    HTML.moonPhase.textContent = `Moon Phase: ${data.moonPhase * 100}% to full moon`;
+    HTML.moonPhase.textContent = `Moon Phase: ${Math.round(data.moonPhase * 100)}% to full moon`;
     HTML.currentTemp.textContent = `Current Temperature: ${data.temperature}°C`;
-    HTML.tempMin.textContent = `Min Temperature: ${data.temperatureLow}°C`;
-    HTML.tempMax.textContent = `Max Temperature: ${data.temperatureHigh}°C`;
     HTML.loading.textContent = ''
 }
 
